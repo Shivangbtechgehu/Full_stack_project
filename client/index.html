@@ -14,7 +14,7 @@
       <a class="navbar-link" href="#hero">Home</a>
       <a class="navbar-link" href="#features">Features</a>
       <a class="navbar-link" href="#about">About</a>
-      <a class="navbar-link" id="login-btn" href="auth.html">Login</a>
+      <a class="navbar-link" id="login-btn" href="#">Login</a>
     </nav>
   </header>
 
@@ -27,7 +27,7 @@
         <p id="hero_content">A modern B2B marketplace where farmers sell collectively, buyers bid transparently, and smart inventory management reduces wastage.</p>
       </div>
       <div class="heroButton">
-        <a href="auth.html" class="Btnborder">Lets Get Started</a>
+        <a href="#" id="hero-start-btn" class="Btnborder">Lets Get Started</a>
       </div>
     </section>
 
@@ -93,6 +93,82 @@
       <p>&copy; 2026 AgriStack. All rights reserved.</p>
     </div>
   </footer>
+
+  <div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h3>Login to AgriStack</h3>
+    <form id="loginForm">
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+      </div>
+      <button type="submit" class="modal-login-btn">Login</button>
+    </form>
+    <p class="modal-footer-text" style="margin-top: 1rem; font-size: 0.9rem;">
+  New to AgriStack? <a href="#" id="toRegister" style="color: var(--primary-green);">Register here</a>
+</p>
+    </p>
+  </div>
+</div>
+
+
+<div id="registerModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeReg">&times;</span>
+    <h3>Register for AgriStack</h3>
+    <form id="registerForm">
+      <div class="input-group">
+        <label for ="regName">Full Name</label>
+        <input type="text" id="regName" placeholder="Enter Full Name" required>
+      </div>
+      <div class="input-group">
+        <label for="regEmail">Email</label>
+        <input type="email" id="regEmail" placeholder="Enter your email" required>
+      </div>
+      <div class="input-group">
+        <label for="uniqueID">Unique ID</label>
+        <input type="text" id="uniqueID" placeholder="Enter your unique ID" required>
+      </div>
+      <div class="input-group radio-group">
+        <label>I am registering as a:</label>
+        <div class="radio-grid">
+          <input type="radio" id="roleFarmer" name="userRole" value="farmer" class="hidden-radio" checked>
+          <label for="roleFarmer" class="radio-btn-label">Farmer</label>
+
+          <input type="radio" id="roleBuyer" name="userRole" value="buyer" class="hidden-radio">
+          <label for="roleBuyer" class="radio-btn-label">Bulk Buyer</label>
+
+          <input type="radio" id="roleKeeper" name="userRole" value="Keeper" class="hidden-radio">
+          <label for="roleKeeper" class="radio-btn-label"> Storage </label>
+
+          <input type="radio" id="roleAdmin" name="userRole" value="admin" class="hidden-radio">
+          <label for="roleAdmin" class="radio-btn-label">Admin</label>
+
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="regPassword">Create Password</label>
+        <input type="password" id="regPassword" placeholder="Enter your password" required>
+      </div>
+      <div class="input-group">
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+      </div>
+      <button type="submit" class="modal-login-btn">Create Account</button>
+      
+    </form>
+    <p class="modal-footer-text" style="margin-top: 1rem; font-size: 0.9rem;">
+      Already have an account? <a href="#" id="toLogin" style="color: var(--primary-green);">Login here</a>
+    </p>
+</div>
+</div>
+
+ <script type="module" src="./src/main.js"></script>
 
 </body>
 </html>

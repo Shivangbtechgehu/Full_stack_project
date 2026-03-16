@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Quintessential&display=swap');
+
 /* --- Global Reset & Variables --- */
 :root {
   --primary-green: #029c3d;
@@ -40,6 +42,7 @@ body {
 }
 
 .logo {
+  font-family: "Comforter Brush", cursive;
   margin-right: auto;
   color: var(--text-light);
   font-size: 1.5rem;
@@ -219,9 +222,11 @@ body {
 
 /* --- Footer --- */
 .footer {
+  /* border: 12px solid black; */
   background-color: var(--dark-green);
   color: var(--text-light);
-  padding: 1rem 1rem 0.5rem 0.5rem;
+  max-height: 400px;
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
 }
 
 .footer-content {
@@ -281,4 +286,121 @@ body {
     margin-left:5px;
 }
 
-/* extra */
+/* Login */
+
+/* Modal Background (The Overlay) */
+
+body.modal-open {
+  overflow: hidden; 
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  backdrop-filter: blur(5px); /* Blurs the background */
+  overflow-y: auto; /* Allows scrolling inside the modal */
+  padding: 2rem 0; /* Gives space at the top and bottom so it doesn't stick to the edges */
+}
+
+/* Modal Box */
+.modal-content {
+  background-color: var(--bg-white);
+  margin: 2rem auto;
+  padding: 2.5rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.close-btn {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #888;
+}
+
+.close-btn:hover { color: var(--primary-green); }
+
+.modal-content h3 {
+  color: var(--primary-green);
+  margin-bottom: 2rem;
+}
+
+.input-group {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.modal-login-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-green);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.modal-login-btn:hover { background-color: var(--dark-green); }
+
+/* --- Radio Button Styles for Registration --- */
+.radio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Creates the 2-column layout */
+  gap: 10px;
+  margin-top: 0.5rem;
+}
+
+.hidden-radio {
+  display: none; /* Hides the default little circle */
+}
+
+.radio-btn-label {
+  display: block;
+  text-align: center;
+  padding: 12px 10px;
+  border: 2px solid var(--primary-green);
+  border-radius: 8px;
+  color: var(--primary-green);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: var(--bg-white);
+}
+
+.radio-btn-label:hover {
+  background-color: var(--primary-green);
+  color: var(--text-light);
+}
+
+.hidden-radio:checked + .radio-btn-label {
+  background-color: var(--primary-green);
+  color: var(--text-light);
+  box-shadow: 0 4px 10px rgba(2, 156, 61, 0.3);
+}
